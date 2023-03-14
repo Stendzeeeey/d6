@@ -1,0 +1,21 @@
+Дан массив X(N). Считая, что нумерация элементов в массиве начинается с нуля, найти минимальный элемент из его элементов с четными номерами: 
+X0, X2, X4, X6, X8, X10, ... ОБЯЗАТЕЛЬНО использовать указатели для доступа к очередному элементу массива.
+
+#include <windows.h>
+#pragma hdrstop
+#include "pt4.h"
+using namespace std;
+
+void Solve()
+{
+    Task("TheMassiv21");
+	int *a, n, min;
+	a = new int[100];
+	pt >> n;
+	for (int i = 0; i < n; i++)
+		pt >> *(a + i);
+	min = *(a + 0);
+	for (int i = 2; i < n; i += 2)
+		if (*(a + i) < min) min = *(a + i);
+	pt << min;
+}
