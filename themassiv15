@@ -1,0 +1,27 @@
+В массиве Х(N) найти значение максимального элемента массива (Max) и количество таких элементов (kol). Запрещается проходить по массиву более одного раза.
+
+#include <windows.h>
+#pragma hdrstop
+#include "pt4.h"
+using namespace std;
+
+void Solve()
+{
+    Task("TheMassiv16");
+    int arr[20], N, i, kol = 1, max, a = 0;
+    pt >> N;
+    for(i=0;i<N;i++){
+        pt >> arr[i];
+    }
+    max = arr[0];
+    i = 0;
+    while(i<(N-1)){
+        if(arr[i] >= max){
+                if(arr[i]> max){
+            max = arr[i];
+            i++; a = 0;}
+        if(arr[i] == max){
+            a++; i++;
+        } else {i++;}}}
+    pt << max << a+1;
+}
