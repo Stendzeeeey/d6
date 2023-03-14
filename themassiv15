@@ -7,7 +7,7 @@ using namespace std;
 
 void Solve()
 {
-    Task("TheMassiv16");
+    Task("TheMassiv15");
     int arr[20], N, i, kol = 1, max, a = 0;
     pt >> N;
     for(i=0;i<N;i++){
