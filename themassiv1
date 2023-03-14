@@ -8,17 +8,27 @@ using namespace std;
 
 void Solve()
 {
-    Task("Massiv1");
-	int n, k = 0; float sr = 0;
+    Task("TheMassiv1");
+	int minn, max, iminn, imax, n, a;
 	pt >> n;
-	int *arr = new int[n];
+	minn = MAXINT;
+	max = MININT;
 	for (int i = 0; i < n; i++)
 	{
-		pt >> *(arr + i);
-		sr += *(arr + i);
+		pt >> a;
+		if (a < minn && abs(a % 2) == 1)
+		{
+			minn = a;
+			iminn = i;
+		}
+		if (a > max && a % 2 == 0)
+		{
+
+			max = a;
+		    imax = i;
+	    }
+
+	
 	}
-	sr /= n;
-	for (int i = 0; i < n; i++)
-		if (*(arr + i) < sr) k++;
-	pt << k;
+	pt << imax << iminn;
 }
